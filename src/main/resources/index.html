@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Final Exam Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Modern font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Icons -->
+</head>
+
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <img class = "ada-logo" src="resources/Adalogonew.png" alt="Final Exam Scheduler Logo">
+        </div>
+        <!--        <ul class="nav-links">-->
+        <!--            <li><a href="#file-upload">File Upload & Instructions</a></li>-->
+        <!--        </ul>-->
+    </nav>
+    <div class="hero">
+        <h1>Final Exam Scheduler</h1>
+        <p>An efficient solution for university exam scheduling</p>
+    </div>
+</header>
+
+<main>
+    <section id="file-upload" class="card ">
+        <h2>Instructions for Inputs</h2>
+
+        <ul>
+            <li>
+                <p>
+                    Upload a CSV file in the following format: <br/> Each row should start with a CRN, and the rest of the row should contain the enrolled Student IDs for that CRN.</p>
+                <div class="upload-container">
+                    <label class="file-upload-label" for="course-csv">
+                        <i class="fas fa-upload"></i> Upload Courses CSV
+                    </label>
+                    <input type="file" id="course-csv" accept=".csv" class="hidden-input" />
+                </div>
+            </li>
+            <li>
+                <p>
+                    Upload a second CSV file in the following format: <br/> Each row should start with Building Name (A, B, D, etc.), followed by Room Number (A210, B211, D207, etc.), <br/>Room Type (Medium, Small, Large), and end with Room Capacity (30, 35, 43, etc.)</p>
+                <div class="upload-container">
+                    <label class="file-upload-label" for="room-csv">
+                        <i class="fas fa-upload"></i> Upload Rooms CSV
+                    </label>
+                    <input type="file" id="room-csv" accept=".csv" class="hidden-input" />
+                </div>
+            </li>
+            <li>
+                <p>Enter the desired percentage of room occupation without (%) sign:</p>
+                <div class="upload-container">
+                    <input type="number" id="room-occupation" class="input-field"
+                           placeholder="Enter percentage (0-100)" min="0" max="100">
+                </div>
+            </li>
+            <li>
+                <p>
+                    Click the button below to process the exam schedule.</p>
+                <div class="upload-container">
+                    <button class="button-style" id = "generate-button" onclick="handleGenerateSchedule()">
+                        <i class="fas fa-play-circle generate-button-i"></i> Generate & Download Schedule
+                    </button>
+                    <div id="download-link"></div> <!-- Placeholder for download link -->
+                </div>
+            </li>
+            <!--            <li>-->
+            <!--                <p>Download the generated CSV file to view the final exam schedule with date, time, and assigned-->
+            <!--                    rooms.</p>-->
+            <!--            </li>-->
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Final Exam Scheduler. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+
+</html>
